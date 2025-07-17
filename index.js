@@ -42,6 +42,10 @@ app.get("/parser", (_, res) => {
     res.render("parser");
 });
 
+app.get("/query", (req, res) => {
+    res.send(`Name: ${req.query.set_name}`)
+});
+
 // Adding a sub router
 app.use("/users", require("./routes/users"));
 
