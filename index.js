@@ -7,7 +7,10 @@ app.set("view engine", "ejs");
 // Optional: If you want the templates to be in other folder aside from 'views'
 // app.set('views', path.join(__dirname, 'templates'));
 
-app.get("/", (req, res) => {
+// Serving static files
+app.use(express.static("public"));
+
+app.get("/", (_, res) => {
     res.send("Hello World");
 });
 
