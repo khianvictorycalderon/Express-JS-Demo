@@ -14,6 +14,12 @@ app.get("/", (_, res) => {
     res.send("Hello World");
 });
 
+app.use(express.urlencoded({ extended: true }));
+
+app.post("/", (_, res) => {
+    res.send("Index")
+});
+
 // Sample error
 app.get("/error", (_, res) => {
     res.status(500).json({
@@ -31,6 +37,9 @@ app.get("/template", (_, res) => {
     res.render("template", {
         name: "Jarvis"
     })
+});
+app.get("/parser", (_, res) => {
+    res.render("parser");
 });
 
 // Adding a sub router

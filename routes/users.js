@@ -9,7 +9,8 @@ router.get("/new", (_, res) => {
     res.send("User new form");
 });
 
-router.post("/create", (_, res) => {
+router.post("/", (req, res) => {
+    console.log(req.body.user_name);
     res.send("Create user");
 });
 
