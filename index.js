@@ -30,4 +30,7 @@ app.get("/template", (_, res) => {
     })
 });
 
+// Adding a sub router
+app.use("/users", require("./routes/users"));
+
 app.listen(3000);
